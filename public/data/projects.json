@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Landing Page",
+      "content": "A landing page for your business, showcasing their destinations and services.",
+      "link": "https://nebuloz.com/lp",
+      "badge": ["new"],
+      "components": [
+        {
+          "navbar": ["model1","model2","model3","model4"]
+        },
+        {
+          "hero": ["model1","model2","model3","model4"]
+        },
+        {
+          "features": ["model1","model2","model3","model4"]
+        },
+        {
+          "testimonial": ["model1","model2","model3","model4"]
+        },
+        {
+          "product": ["model1","model2","model3","model4"]
+        },
+        {
+          "cta": ["model1","model2","model3","model4"]
+        },
+        {
+          "faq": ["model1","model2","model3","model4"]
+        },
+        {
+          "contact": ["model1","model2","model3","model4"]
+        },
+        {
+          "footer": ["model1","model2","model3","model4"]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Institutional Sites",
+      "content": "Where you can showcase your company's history, values and professionalism!",
+      "link": "https://nebuloz.com/institutional",
+      "badge": ["soon"],
+      "components": [{
+        "navbar": "model1",
+        "hero": "model2",
+        "features": "model3",
+        "testimonial": "model1",
+        "product": "model2",
+        "cta": "model1",
+        "faq": "model2",
+        "contact": "model1",
+        "footer": "model2"
+      }]
+    }
+  ]
+}
+
