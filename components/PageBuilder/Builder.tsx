@@ -1,21 +1,15 @@
-// YourMainComponent.js
 import React, { useState } from 'react';
-import TemplateSelector from './TemplateSelector';
-import TemplateBuilder from './TemplateBuilder';
+import  TemplateList  from '../PageBuilder/components/TemplateList/TemplateList';
 
-const Builder = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-
-  const handleTemplateSelect = (template) => {
-    setSelectedTemplate(template);
-  };
+export const Builder = () => {
 
   return (
-    <div>
-      <TemplateSelector onSelectTemplate={handleTemplateSelect} />
-      <TemplateBuilder selectedTemplate={selectedTemplate} />
+    <div className="mt-5 flex flex-col items-center">
+      <h1 className="mb-4 text-2xl font-bold">Template Builder</h1>
+      <div className="flex">
+
+        <TemplateList/>
+      </div>
     </div>
   );
 };
-
-export default Builder;

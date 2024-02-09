@@ -6,7 +6,7 @@ const { test, assert } = vitest;
 test("useProjects hook should fetch projects", async () => {
   // Mocking the fetch function
   globalThis.fetch = async () => ({
-    json: async () => [{ title: "Project 1", content: "Content 1", link: "Link 1", badge: ["Badge 1"] }],
+    json: async () => ({ projects: [{ title: "Project 1", content: "Content 1", link: "Link 1", badge: ["Badge 1"] }] }),
   });
 
   // Mocking the useState and useEffect hooks
@@ -23,7 +23,7 @@ test("useProjects hook should fetch projects", async () => {
   };
 
   // Call the hook
-  const [projects, fetchProjects] = useProjects("fake-url");
+  const { projects, fetchProjects } = useProjects("fake-url");
 
   // Check initial state
   assert.equal(projects.length, 0);

@@ -1,70 +1,40 @@
+// TemplateCards.tsx
+
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 
-interface TemplateCardsProps {}
-
 interface TemplateCardsProps {
-  idx: number;
   selectedProjectIndex: number;
   project: {
-    id: number;
+    id: string;
     badge?: string[];
     link?: string;
     title?: string;
     content?: string;
-    components: [{
-    navbar: string,
-    hero: string,
-    features: string,
-    testimonial: string,
-    product: string,
-    cta: string,
-    faq: string,
-    contact: string,
-    footer: string
-  }]
+    components: Array<{ [key: string]: string[] }>;
   };
-
 }
 
-const TemplateCards: React.FC<TemplateCardsProps> = ({selectedProjectIndex, project}) => {
-  const id = project.id;
+const TemplateCards: React.FC<TemplateCardsProps> = ({ selectedProjectIndex, project }) => {
+  const { id, badge, link, title, content } = project;
+
   return (
-    <Card
-      className={`w-full ${
-       id === selectedProjectIndex ? "animate-squeeze border-2 border-primary duration-1000 " : ""
-      }`}
-      key={project?.link}
-    >
-      <CardHeader className="my-2">
-        <div className="flex flex-row">
-          {project.badge?.map((badge, id) => (
-            <div className="mr-2" key={id}>
-              <Badge
-                variant={`${
-                  badge === "new" ? "default" : "secondary"
-                }`}
-              >
-                {badge}
-              </Badge>
-            </div>
-          ))}
-        </div>
-        <CardTitle className="text-primary">
-          {project.title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>{project.content}</CardContent>
-      <CardFooter className="flex justify-between"></CardFooter>
-    </Card>
+    <div className={`w-full rounded-lg ${id === selectedProjectIndex ? "border-2 border-primary" : ""} p-4` }>
+      <div className="flex flex-row">
+        {badge?.map((badgeItem, index) => (
+          <div className="mr-2" key={index}>
+            <Badge variant={badgeItem === "new" ? "default" : "secondary"}>
+              {badgeItem}
+            </Badge>
+          </div>
+        ))}
+      </div>
+      <h2 className="mb-4 mt-2 text-xl font-bold">{title}</h2>
+      <p className="mb-4">{content}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="text-primary">
+        Visit Projects
+      </a>
+    </div>
   );
 };
 

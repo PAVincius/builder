@@ -8,31 +8,31 @@
       "badge": ["new"],
       "components": [
         {
-          "navbar": ["model1","model2","model3","model4"]
+          "navbar": ["model1", "model2"]
         },
         {
-          "hero": ["model1","model2","model3","model4"]
+          "hero": ["model1"]
         },
         {
-          "features": ["model1","model2","model3","model4"]
+          "features": ["model1"]
         },
         {
-          "testimonial": ["model1","model2","model3","model4"]
+          "testimonial": ["model1"]
         },
         {
-          "product": ["model1","model2","model3","model4"]
+          "product": ["model1"]
         },
         {
-          "cta": ["model1","model2","model3","model4"]
+          "cta": ["model1"]
         },
         {
-          "faq": ["model1","model2","model3","model4"]
+          "faq": ["model1"]
         },
         {
-          "contact": ["model1","model2","model3","model4"]
+          "contact": ["model1"]
         },
         {
-          "footer": ["model1","model2","model3","model4"]
+          "footer": ["model1"]
         }
       ]
     },
@@ -42,18 +42,32 @@
       "content": "Where you can showcase your company's history, values and professionalism!",
       "link": "https://nebuloz.com/institutional",
       "badge": ["soon"],
-      "components": [{
-        "navbar": "model1",
-        "hero": "model2",
-        "features": "model3",
-        "testimonial": "model1",
-        "product": "model2",
-        "cta": "model1",
-        "faq": "model2",
-        "contact": "model1",
-        "footer": "model2"
-      }]
+      "components": [
+        {
+          "navbar": ["model1"]
+        },
+        {
+          "hero": ["model1"]
+        },
+        {
+          "aboutUs": ["model1"]
+        },
+        {
+          "services": ["model1"]
+        },
+        {
+          "testimonials": ["model1"]
+        },
+        {
+          "team": ["model1"]
+        },
+        {
+          "contact": ["model1"]
+        },
+        {
+          "footer": ["model1"]
+        }
+      ]
     }
   ]
 }
-

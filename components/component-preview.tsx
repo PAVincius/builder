@@ -15,7 +15,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import { styles } from "../styles"
+import { styles } from "../components/registry/styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -92,7 +92,6 @@ export function ComponentPreview({
         </div>
         <TabsContent value="preview" className="relative rounded-md border">
           <div className="flex items-center justify-between p-4">
-            <StyleSwitcher />
             {extractedClassNames ? (
               <CopyWithClassNames
                 value={codeString}

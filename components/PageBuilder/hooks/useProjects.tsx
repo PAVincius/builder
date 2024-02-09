@@ -1,4 +1,5 @@
-import { useState, useEffect, Key } from "react";
+// hooks/useProjects.js
+import { useState, useEffect, useCallback } from "react";
 
 interface Project {
   id: number;
@@ -13,22 +14,23 @@ export const useProjects = (url: string): [Project[], () => Promise<void>, any] 
   const [projects, setProjects] = useState<Project[]>([]);
   const [error, setError] = useState(null);
 
-  const fetchProjects = async () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchProjects = useCallback(async () => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      setProjects(data.projects); // Extract the projects array from the data
+      setProjects(data.projects || []);
     } catch (error) {
       setError(error);
     }
-  };
+  });
 
   useEffect(() => {
     fetchProjects();
-  }, []);
+  }, [fetchProjects]);
 
   return [projects, fetchProjects, error];
 };
